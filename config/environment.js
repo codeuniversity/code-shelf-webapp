@@ -42,6 +42,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
   }
 
   if (environment === 'test') {
@@ -58,6 +59,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
   }
 
   return ENV;

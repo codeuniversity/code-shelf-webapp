@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/codeuniversity/code-shelf-webapp/tree/master.svg?style=svg&circle-token=d40663eff127a73ee565fe9818d5ae6706b8fed2)](https://circleci.com/gh/codeuniversity/code-shelf-webapp/tree/master)
 
-#### code-shelf-webapp
+## code-shelf-webapp
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.

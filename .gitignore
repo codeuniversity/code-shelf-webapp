@@ -9,7 +9,7 @@
 /node_modules/
 
 # misc
-/.env*
+/.env
 /.sass-cache
 /connect.lock
 /coverage/

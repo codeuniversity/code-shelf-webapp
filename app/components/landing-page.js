@@ -1,6 +1,5 @@
-
-import { inject } from '@ember/service';
 import Component from '@ember/component';
+import { inject } from '@ember/service';
 
 export default Component.extend({
 	session: inject(),
@@ -13,7 +12,7 @@ export default Component.extend({
 	actions: {
 		signIn: function(provider) {
 			this.get('session').open('firebase', {provider: provider}).then(function(data) {
-				alert(data.currentUser);
+				console.log(data.currentUser);
 			});
 		}
 	}

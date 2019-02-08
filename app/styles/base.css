@@ -39,6 +39,10 @@ img:active {
 	outline: none;
 }
 
+button:active {
+	outline: none;
+}
+
 .transitions{
 	transition: .5s;
 	-moz-transition: .5s;

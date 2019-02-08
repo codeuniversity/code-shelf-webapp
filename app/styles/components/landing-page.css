@@ -1,0 +1,42 @@
+#landing-page {
+	width: 100%;
+}
+
+#landing-page-auth-section {
+	width: min-content;
+	height: min-content;
+	background-color: #fff;
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	padding: 20px;
+	border-radius: 7px;
+	-webkit-box-shadow: 0px 1px 17px 5px rgba(186,186,186,1);
+	-moz-box-shadow: 0px 1px 17px 5px rgba(186,186,186,1);
+	box-shadow: 0px 1px 17px 5px rgba(186,186,186,1);
+}
+
+#signin-button {
+	cursor: pointer;
+	background: url(/assets/img/btn_google_signin_light_normal.png) no-repeat;
+	cursor: pointer;
+	border: none;
+	width: 191px;
+	height: 46px;
+	outline: none;
+}
+
+#signin-button:hover {
+	background: url(/assets/img/btn_google_signin_dark_focus.png) no-repeat;
+}
+
+@media only screen and (max-device-width: 600px) {
+
+	#landing-page-auth-section {
+		width: 90%
+	}
+	
+}

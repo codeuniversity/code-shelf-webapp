@@ -29,6 +29,10 @@ body {
 	background-color: #f7f7f7;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 .npbm {
 	padding: 0;
 	margin: 0;

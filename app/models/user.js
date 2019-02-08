@@ -1,10 +1,11 @@
 export default class User {
 
-  constructor(id, displayName, email, photoUrl) {
+  constructor(id, displayName, email, photoUrl, role) {
     this._id = id;
     this._displayName = displayName;
     this._email = email;
     this._photoUrl = photoUrl;
+    this._role = role;
   }
 
   get id() {
@@ -37,6 +38,14 @@ export default class User {
 
   set photoUrl(value) {
     this._photoUrl = value;
+  }
+
+  get role() {
+    return this._role;
+  }
+
+  set role(value) {
+    this._role = value;
   }
 
 }

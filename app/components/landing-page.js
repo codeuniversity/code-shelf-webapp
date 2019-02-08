@@ -12,7 +12,13 @@ export default Component.extend({
 	actions: {
 		signIn: function(provider) {
 			this.get('session').open('firebase', {provider: provider}).then(function(data) {
-				console.log(data.currentUser);
+				let displayName = data.currentUser.displayName;
+				let email = data.currentUser.email;
+				let photoUrl = data.currentUser.photoURL;
+
+				console.log(displayName);
+				console.log(email);
+				console.log(photoUrl);
 			});
 		},
 

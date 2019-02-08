@@ -7,17 +7,18 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('unauthorized');
 });
 
 Router.reopen({
-	didTransition() {
-		/*eslint-disable */
-		return ga('send', 'pageview', {
-			'page': this.get('url'),
-			'title': this.get('url')
-		});
-		/*eslint-enable */
-	}
+    didTransition() {
+        /*eslint-disable */
+        return ga('send', 'pageview', {
+            'page': this.get('url'),
+            'title': this.get('url')
+        });
+        /*eslint-enable */
+    }
 });
 
 export default Router;

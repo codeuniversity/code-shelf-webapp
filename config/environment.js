@@ -60,5 +60,8 @@ module.exports = function(environment) {
     // here you can enable a production-specific feature
   }
 
+  ENV.SERVER_URL = process.env.SERVER_URL;
+  ENV.AUTHORIZATION_CHECK_ENDPOINT = '/user/authorization';
+
   return ENV;
 };

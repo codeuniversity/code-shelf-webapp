@@ -16,12 +16,12 @@ export default Component.extend({
 		signIn: function(provider) {
 			let self = this;
 
-			self.get('session').open('firebase', {provider: provider}).then(function(data) {
-				let displayName = data.currentUser.displayName;
-				let email = data.currentUser.email;
-				let photoUrl = data.currentUser.photoURL;
-				
-				self.get('ajax').request(ENV.AUTHORIZATION_CHECK_ENDPOINT + '/' + email).then(response => {
+			this.get('session').open('firebase', {provider: provider}).then(function(authData) {
+				self.get('ajax').request(ENV.AUTHORIZATION_CHECK_ENDPOINT + '/' + authData.currentUser.email).then(response => {
+					let displayName = authData.currentUser.displayName;
+					let email = authData.currentUser.email;
+					let photoUrl = authData.currentUser.photoURL;
+
 					console.log(displayName);
 					console.log(email);
 					console.log(photoUrl);
@@ -36,3 +36,4 @@ export default Component.extend({
 	}
 
 });
+

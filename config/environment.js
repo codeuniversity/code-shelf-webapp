@@ -61,7 +61,7 @@ module.exports = function(environment) {
   }
 
   ENV.SERVER_URL = process.env.SERVER_URL;
-  ENV.AUTHORIZATION_CHECK_ENDPOINT = '/user/authorization';
+  ENV.AUTHORIZATION_CHECK_ENDPOINT = '/user/authorized';
 
   return ENV;
 };

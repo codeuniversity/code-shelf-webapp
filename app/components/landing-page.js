@@ -1,5 +1,3 @@
-import $ from 'jquery';
-import Ember from 'ember';
 import { inject } from '@ember/service';
 import Component from '@ember/component';
 import ENV from 'code-shelf-webapp/config/environment';
@@ -25,9 +23,14 @@ export default Component.extend({
 
 					if (!authorized) {
 						self.get('session').close().then(() => {
-							
+							// TODO make this more ux friendly
+							alert('Access Denied.');
 						});
+
+						return;
 					}
+
+					console.log(displayName + email + photoUrl);
 				});
 			});
 		}

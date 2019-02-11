@@ -51,6 +51,7 @@
 	border: 1px solid #ff6a6a;
 	padding: 10px;
 	border-radius: 5px;
+	opacity: 0;
 }
 
 @media only screen and (max-device-width: 600px) {

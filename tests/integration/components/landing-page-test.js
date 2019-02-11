@@ -8,6 +8,6 @@ module('Integration | Component | landing-page', function(hooks) {
 
   test('it renders', async function(assert) {
     await render(hbs`{{landing-page}}`);
-    assert.equal(this.element.textContent.trim(), '');
+    assert.equal(this.element.textContent.trim(), 'Access Denied.');
   });
 });

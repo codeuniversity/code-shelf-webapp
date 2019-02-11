@@ -1,4 +1,5 @@
-
+import $ from 'jquery';
+import Ember from 'ember';
 import { inject } from '@ember/service';
 import Component from '@ember/component';
 import ENV from 'code-shelf-webapp/config/environment';
@@ -16,22 +17,19 @@ export default Component.extend({
 		signIn: function(provider) {
 			let self = this;
 
-			this.get('session').open('firebase', {provider: provider}).then(function(authData) {
-				self.get('ajax').request(ENV.AUTHORIZATION_CHECK_ENDPOINT + '/' + authData.currentUser.email).then(response => {
+			this.get('session').open('firebase', {provider: provider}).then(authData => {
+				self.get('ajax').request(ENV.AUTHORIZATION_CHECK_ENDPOINT + '/' + authData.currentUser.email).then(authorized => {
 					let displayName = authData.currentUser.displayName;
 					let email = authData.currentUser.email;
 					let photoUrl = authData.currentUser.photoURL;
 
-					console.log(displayName);
-					console.log(email);
-					console.log(photoUrl);
-					console.log(response);
+					if (!authorized) {
+						self.get('session').close().then(() => {
+							
+						});
+					}
 				});
 			});
-		},
-
-		signOut: function() {
-			this.get('session').close();
 		}
 	}
 

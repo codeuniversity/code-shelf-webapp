@@ -38,11 +38,19 @@
 	outline: none;
 	-webkit-filter: drop-shadow(2px 5px 5px rgba(186,186,186,1));
 	-moz-filter: drop-shadow(2px 5px 5px rgba(186,186,186,1));
-  filter: drop-shadow(2px 5px 5px rgba(186,186,186,1));
+	filter: drop-shadow(2px 5px 5px rgba(186,186,186,1));
+	margin-bottom: 30px;
 }
 
 #signin-button:hover {
 	background: url(/assets/img/btn_google_signin_dark_focus.png) no-repeat;
+}
+
+#landing-page-access-denied {
+	background-color: #ffb7b7;
+	border: 1px solid #ff6a6a;
+	padding: 10px;
+	border-radius: 5px;
 }
 
 @media only screen and (max-device-width: 600px) {

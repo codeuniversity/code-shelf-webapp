@@ -26,17 +26,12 @@ export default Component.extend({
 						return;
 					}
 
-					let displayName = authData.currentUser.displayName;
 					let email = authData.currentUser.email;
+					let displayName = authData.currentUser.displayName;
 					let photoUrl = authData.currentUser.photoURL;
 
-					usersRepo.exists(email).then(exists => {
-						if (exists) {
-							console.log("user exists");
-						}
-						else {
-							console.log("first time user");
-						}
+					usersRepo.getUserData(email, displayName).then(userData => {
+						console.log(userData);
 					});
 
 					console.log(displayName + email + photoUrl);

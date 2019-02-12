@@ -62,6 +62,7 @@ module.exports = function(environment) {
 
   ENV.SERVER_URL = process.env.SERVER_URL;
   ENV.EXISTENCE_ENDPOINT = '/user/exists';
+  ENV.USER_DATA_ENDPOINT = '/user'
   ENV.AUTHORIZATION_ENDPOINT = '/user/authorized';
 
   return ENV;

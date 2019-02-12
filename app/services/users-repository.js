@@ -11,6 +11,16 @@ export default Service.extend({
 
 	isAuthorized: function(email) {
 		return this.get('ajax').request(ENV.AUTHORIZATION_ENDPOINT + '/' + email);
+	},
+
+	getUserData: function(email, displayName) {
+		return this.get('ajax').request(ENV.USER_DATA_ENDPOINT, {
+			method: 'GET',
+			data: {
+				'email': email,
+				'displayName': displayName
+			}
+		});
 	}
 
 });

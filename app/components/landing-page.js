@@ -20,7 +20,7 @@ export default Component.extend({
 				usersRepo.isAuthorized(authData.currentUser.email).then(authorized => {
 					if (!authorized) {
 						self.get('session').close().then(() => {
-							alert('Access Denied.');
+							window.location.replace('/');
 						});
 
 						return;

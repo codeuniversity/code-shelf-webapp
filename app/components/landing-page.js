@@ -14,21 +14,30 @@ export default Component.extend({
 	actions: {
 		signIn: function(provider) {
 			let self = this;
+			let usersRepo = this.get('usersRepository');
 
 			this.get('session').open('firebase', {provider: provider}).then(authData => {
-				self.get('usersRepository').isAuthorized(authData.currentUser.email).then(authorized => {
-					let displayName = authData.currentUser.displayName;
-					let email = authData.currentUser.email;
-					let photoUrl = authData.currentUser.photoURL;
-
+				usersRepo.isAuthorized(authData.currentUser.email).then(authorized => {
 					if (!authorized) {
 						self.get('session').close().then(() => {
-							// TODO make this more ux friendly
 							alert('Access Denied.');
 						});
 
 						return;
 					}
+
+					let displayName = authData.currentUser.displayName;
+					let email = authData.currentUser.email;
+					let photoUrl = authData.currentUser.photoURL;
+
+					usersRepo.exists(email).then(exists => {
+						if (exists) {
+							console.log("user exists");
+						}
+						else {
+							console.log("first time user");
+						}
+					});
 
 					console.log(displayName + email + photoUrl);
 				});

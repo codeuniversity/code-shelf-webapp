@@ -1,10 +1,10 @@
 import { inject } from '@ember/service';
 import Component from '@ember/component';
-import ENV from 'code-shelf-webapp/config/environment';
 
 export default Component.extend({
-	session: inject(),
 	ajax: inject(),
+	session: inject(),
+	usersRepository: inject(),
 
 	didInsertElement: function() {
 		return this.get('session').fetch().catch(function() {
@@ -16,7 +16,7 @@ export default Component.extend({
 			let self = this;
 
 			this.get('session').open('firebase', {provider: provider}).then(authData => {
-				self.get('ajax').request(ENV.AUTHORIZATION_CHECK_ENDPOINT + '/' + authData.currentUser.email).then(authorized => {
+				self.get('usersRepository').isAuthorized(authData.currentUser.email).then(authorized => {
 					let displayName = authData.currentUser.displayName;
 					let email = authData.currentUser.email;
 					let photoUrl = authData.currentUser.photoURL;
@@ -37,4 +37,3 @@ export default Component.extend({
 	}
 
 });
-

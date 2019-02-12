@@ -1,8 +1,8 @@
-import Ember from 'ember';
+import Service from '@ember/service';
 import { inject } from '@ember/service';
 import ENV from 'code-shelf-webapp/config/environment';
 
-export default Ember.Service.extend({
+export default Service.extend({
 	ajax: inject(),
 
 	isAuthorized: function(email) {

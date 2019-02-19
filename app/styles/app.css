@@ -1,5 +1,6 @@
 @import 'base.css';
 @import 'pace.css';
 
+@import 'components/dash-board.css';
 @import 'components/landing-page.css';
 @import 'components/page-header.css';

@@ -38,6 +38,7 @@ export default Component.extend({
 
 					usersRepo.getUserData(email, displayName).then(userData => {
 						let user = new User(userData.id, displayName, email, photoUrl, userData.role);
+						self.get('user').clear();
 						self.get('user').pushObject(user);
 					});
 				});

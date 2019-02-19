@@ -1,3 +1,4 @@
+import User from '../models/user';
 import { inject } from '@ember/service';
 import Component from '@ember/component';
 
@@ -5,6 +6,11 @@ export default Component.extend({
 	ajax: inject(),
 	session: inject(),
 	usersRepository: inject(),
+
+	init() {
+    this._super(...arguments);
+    this.user = this.items || [];
+  },
 
 	didInsertElement: function() {
 		return this.get('session').fetch().catch(function() {
@@ -31,10 +37,9 @@ export default Component.extend({
 					let photoUrl = authData.currentUser.photoURL;
 
 					usersRepo.getUserData(email, displayName).then(userData => {
-						console.log(userData);
+						let user = new User(userData.id, displayName, email, photoUrl, userData.role);
+						self.get('user').pushObject(user);
 					});
-
-					console.log(displayName + email + photoUrl);
 				});
 			});
 		}

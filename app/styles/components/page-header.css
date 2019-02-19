@@ -1,5 +1,14 @@
 #page-header {
 	background-color: #fff;
-	height: 50px;
 	padding: 10px;
+	border-bottom: 1px solid #cccccc;
+}
+
+#inner-header {
+	width: 80%;
+	margin: auto;
+}
+
+#display-name {
+	font-family: .8em;
 }

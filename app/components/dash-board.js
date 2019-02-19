@@ -9,11 +9,5 @@ export default Component.extend({
 	didInsertElement: function() {
 		return this.get('session').fetch().catch(function() {
 		});
-	},
-
-	actions: {
-		signOut: function() {
-      this.get('session').close();
-    }
 	}
 });

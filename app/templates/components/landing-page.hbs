@@ -1,12 +1,6 @@
-{{#if session.isAuthenticated}}
-	{{#each user key="@index" as |user|}}
-		{{dash-board user=user}}
-	{{/each}}
-{{else}}
-	<div id="landing-page-auth-section">
-		<img src="/assets/img/code.png" id="landing-page-logo" title="CODE Logo" alt="CODE Logo">
-		<br>
-		<button {{action "signIn" "google"}} class="transitions" id="signin-button"  title="Sign in with your Google Account"></button>
-		<div id="landing-page-access-denied" class="transitions">Access Denied.</div>
-	</div>
-{{/if}}
+<div id="landing-page-auth-section">
+	<img src="/assets/img/code.png" id="landing-page-logo" title="CODE Logo" alt="CODE Logo">
+	<br>
+	<button {{action "signIn" "google"}} class="transitions" id="signin-button"  title="Sign in with your Google Account"></button>
+	<div id="landing-page-access-denied" class="transitions">Access Denied.</div>
+</div>

@@ -2,13 +2,65 @@
 	background-color: #fff;
 	padding: 10px;
 	border-bottom: 1px solid #cccccc;
+	position: relative;
 }
 
 #inner-header {
-	width: 80%;
+	width: 70%;
 	margin: auto;
+	position: relative;
+	height: 35px;
 }
 
 #display-name {
-	font-family: .8em;
+	font-size: .8em;
+	position: absolute;
+	right: 45px;
+	top: 10px;
+}
+
+#display-picture {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	margin: 0;
+	-webkit-box-shadow: 0px 1px 7px 2px rgba(186,186,186,1);
+	-moz-box-shadow: 0px 1px 7px 2px rgba(186,186,186,1);
+	box-shadow: 0px 1px 7px 2px rgba(186,186,186,1);
+}
+
+#header-logo {
+	width: 35px;
+	height: 35px;
+	border-radius: 7px;
+	margin-bottom: 30px;
+	-webkit-box-shadow: 0px 1px 7px 2px rgba(186,186,186,1);
+	-moz-box-shadow: 0px 1px 7px 2px rgba(186,186,186,1);
+	box-shadow: 0px 1px 7px 2px rgba(186,186,186,1);
+}
+
+#drop-down {
+	width: 100px;
+	position: absolute;
+	right: 0;
+	top: 45px;
+	background-color: #fff;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+
+.drop-down-item {
+	display: block;
+	text-decoration: none;
+	font-size: .8em;
+	color: #3d3d3d;
+	padding: 10px;
+}
+
+.drop-down-item:hover {
+	background-color: #f7f7f7;
 }

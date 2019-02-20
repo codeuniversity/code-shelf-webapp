@@ -1,1 +1,5 @@
-{{landing-page session=session}}
+{{#if session.isAuthenticated}}
+	{{dash-board}}
+{{else}}
+	{{landing-page}}
+{{/if}} 

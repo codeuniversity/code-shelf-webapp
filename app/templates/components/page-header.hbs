@@ -1,6 +1,11 @@
 <div id="page-header">
 	<div id="inner-header">
-		<span id="display-name">{{user.displayName}}</span>
-		<button {{action "signOut"}}>Sign out</button>
+		<a href="/"><img src="/assets/img/code.png" id="header-logo" title="CODE Logo" alt="CODE Logo"></a>
+		<span id="display-name">{{user._displayName}}</span>
+		<img id="display-picture" src={{user._photoUrl}} alt="{{user._displayName}}'s profile picture" title="{{user._displayName}}'s profile picture">
+
+		<div id="drop-down">
+			<a href="#" class="drop-down-item" {{action "signOut"}} title="Sigh Out">Sign Out</a>
+		</div>
 	</div>
 </div>

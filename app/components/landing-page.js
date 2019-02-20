@@ -7,11 +7,6 @@ export default Component.extend({
 	session: inject(),
 	usersRepository: inject(),
 
-	init() {
-    this._super(...arguments);
-    this.user = this.items || [];
-  },
-
 	didInsertElement: function() {
 		return this.get('session').fetch().catch(function() {
 		});
@@ -38,8 +33,7 @@ export default Component.extend({
 
 					usersRepo.getUserData(email, displayName).then(userData => {
 						let user = new User(userData.id, displayName, email, photoUrl, userData.role);
-						self.get('user').clear();
-						self.get('user').pushObject(user);
+						window.localStorage.setItem('user', JSON.stringify(user));
 					});
 				});
 			});

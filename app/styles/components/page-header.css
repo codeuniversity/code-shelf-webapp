@@ -52,6 +52,8 @@
 	border-right: 1px solid #cccccc;
 	border-bottom: 1px solid #cccccc;
 	opacity: 0;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 
 .drop-down-item {
@@ -64,4 +66,12 @@
 
 .drop-down-item:hover {
 	background-color: #f7f7f7;
+}
+
+@media only screen and (max-device-width: 600px) {
+
+	#inner-header {
+		width: 90%;
+	}
+
 }

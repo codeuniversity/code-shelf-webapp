@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import { inject } from '@ember/service';
 import Component from '@ember/component';
 
@@ -13,6 +14,16 @@ export default Component.extend({
 
 	didInsertElement: function() {
 		return this.get('session').fetch().catch(() => {});
+	},
+
+	didRender: function() {
+		$("#display-picture").click(function() {
+			let dropDown = "#drop-down";
+			var isVisible = $(dropDown).css('opacity') == 1;
+
+			if (!isVisible) $(dropDown).css("opacity", 1);
+			else $(dropDown).css("opacity", 0);
+		});
 	},
 
 	actions: {

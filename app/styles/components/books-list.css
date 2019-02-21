@@ -1,17 +1,12 @@
 #books-list {
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-start;
+  justify-content: space-around;
 }
 
 #books-list a {
 	width: 15%;
-	margin-right: 1.6%;
-	margin-bottom: 1.6%;
-}
-
-#books-list a:nth-child(6n) img {
-	margin-right: 0;
+	margin-bottom: 2%; 
 }
 
 .book {
@@ -56,8 +51,9 @@
 
 @media only screen and (max-device-width: 600px) {
 
-	.book {
-		width: 47%;
+	#books-list a {
+		width: 45%;
+		margin-bottom: 5%;
 	}
 
 }

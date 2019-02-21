@@ -17,7 +17,7 @@
 
 @media only screen and (min-device-width: 600px) {
 	#books-list a:nth-child(8n) img {
-		clear: left;
+		clear: both;
 		float: left;
 	}
 

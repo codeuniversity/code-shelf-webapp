@@ -58,6 +58,17 @@
 
 	.book {
 		width: 48%;
+		margin-right: 2.5%;
+		margin-bottom: 2.5%;
+	}
+
+	#books-list a:nth-child(2n) img {
+		margin-right: 0;
+	}
+
+	#books-list a:nth-child(3n) img {
+		float: left;
+		clear: left;
 	}
 
 }

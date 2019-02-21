@@ -1,5 +1,5 @@
 {{#if session.isAuthenticated}}
-	{{dash-board}}
+	{{dash-board userGoogleData=session.currentUser}}
 {{else}}
 	{{landing-page}}
 {{/if}} 

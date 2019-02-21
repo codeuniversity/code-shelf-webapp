@@ -6,13 +6,18 @@
 	width: 13%;
 	border: 0;
 	padding: 0;
-	border-radius: 3px;
+	border-radius: 5px;
 	float: left;
 	margin-right: 1.5%;
 	margin-bottom: 1.5%;
 	-webkit-box-shadow: 0px 6px 5px 0px rgba(138,133,138,1);
 	-moz-box-shadow: 0px 6px 5px 0px rgba(138,133,138,1);
 	box-shadow: 0px 6px 5px 0px rgba(138,133,138,1);
+}
+
+#books-list a:nth-child(8n) img {
+	float: left;
+	clear: left;
 }
 
 #books-list a:nth-child(7n) img {
@@ -23,6 +28,30 @@
 	-webkit-box-shadow: 0px 10px 7px 0px rgba(138,133,138,1);
 	-moz-box-shadow: 0px 10px 7px 0px rgba(138,133,138,1);
 	box-shadow: 0px 10px 7px 0px rgba(138,133,138,1);
+}
+
+#filter-section {
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+#filter-section:span {
+	display: inline-block;
+}
+
+.filter-field {
+	display: inline-block;
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #cccccc;
+}
+
+.filter-field:focus {
+	outline: none;
+	-webkit-box-shadow: 0px 1px 5px 1px rgba(138,133,138,1);
+	-moz-box-shadow: 0px 1px 5px 1px rgba(138,133,138,1);
+	box-shadow: 0px 1px 5px 1px rgba(138,133,138,1);
 }
 
 @media only screen and (max-device-width: 600px) {

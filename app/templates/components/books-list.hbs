@@ -1,5 +1,10 @@
 <div>
-	<h3>Books</h3>
+	<div id="filter-section">
+			<span>
+				<input type="text" name="search" placeholder="search" class="filter-field transitions">
+			</span>
+	</div>
+
 	<div id="books-list">
 		{{#each books key="@index" as |book|}}
 			<a href="/book/{{book.id}}" class="book-link">

@@ -1,13 +1,16 @@
 #books-list {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .book {
 	display: inline-block;
+  flex-grow: 1;
 	width: 13%;
+  min-width: 13%;
 	border: 0;
 	padding: 0;
 	border-radius: 5px;
-	float: left;
 	margin-right: 1.5%;
 	margin-bottom: 1.5%;
 	-webkit-box-shadow: 0px 6px 5px 0px rgba(138,133,138,1);

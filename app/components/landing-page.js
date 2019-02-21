@@ -8,8 +8,7 @@ export default Component.extend({
 	usersRepository: inject(),
 
 	didInsertElement: function() {
-		return this.get('session').fetch().catch(function() {
-		});
+		return this.get('session').fetch().catch(() => {});
 	},
 
 	actions: {

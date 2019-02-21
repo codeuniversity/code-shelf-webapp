@@ -30,6 +30,7 @@
     "ember-cli-htmlbars": "^3.0.0",
     "ember-cli-htmlbars-inline-precompile": "^1.0.3",
     "ember-cli-inject-live-reload": "^1.8.2",
+    "ember-cli-masonry-grid": "0.0.8",
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-template-lint": "^1.0.0-beta.1",
@@ -51,6 +52,7 @@
     "node": "6.* || 8.* || >= 10.*"
   },
   "dependencies": {
+    "masonry-layout": "^4.2.2",
     "quagga": "^0.12.1"
   }
 }

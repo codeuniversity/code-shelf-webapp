@@ -7,12 +7,12 @@ export default Component.extend({
 	session: inject(),
 	usersRepository: inject(),
 
-	didInsertElement: function() {
+	didInsertElement: function () {
 		return this.get('session').fetch().catch(() => {});
 	},
 
 	actions: {
-		signIn: function(provider) {
+		signIn: function (provider) {
 			let self = this;
 			let usersRepo = this.get('usersRepository');
 

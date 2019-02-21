@@ -1,1 +1,6 @@
-{{yield}}
+<div>
+	<h3>Books</h3>
+	{{#each books key="@index" as |book|}}
+		<a href="#">{{book.title}}</a>
+	{{/each}}
+</div>

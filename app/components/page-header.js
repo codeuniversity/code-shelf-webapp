@@ -7,16 +7,16 @@ export default Component.extend({
 	session: inject(),
 	usersRepository: inject(),
 
-	init: function() {
+	init: function () {
 		this._super(...arguments);
 		this.set('user', JSON.parse(window.localStorage.getItem('user')));
 	},
 
-	didInsertElement: function() {
+	didInsertElement: function () {
 		return this.get('session').fetch().catch(() => {});
 	},
 
-	didRender: function() {
+	didRender: function () {
 		$("#display-picture").click(function() {
 			let dropDown = "#drop-down";
 			var isVisible = $(dropDown).css('opacity') == 1;
@@ -27,7 +27,7 @@ export default Component.extend({
 	},
 
 	actions: {
-		signOut: function() {
+		signOut: function () {
       this.get('session').close();
       window.localStorage.removeItem('user');
     }

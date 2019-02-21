@@ -17,24 +17,24 @@ export default Component.extend({
 			let usersRepo = this.get('usersRepository');
 
 			this.get('session').open('firebase', {provider: provider}).then(authData => {
-				let isAuthorized = usersRepo.isAuthorized(authData.currentUser.email);
+				usersRepo.isAuthorized(authData.currentUser.email).then(isAuthorized => {
+					if (!isAuthorized) {
+						self.get('session').close().then(() => {
+							window.location.replace('/');
+						});
 
-				if (!isAuthorized) {
-					self.get('session').close().then(() => {
-						window.location.replace('/');
-					});
+						return;
+					}
+					else {
+						let email = authData.currentUser.email;
+						let displayName = authData.currentUser.displayName;
+						let photoUrl = authData.currentUser.photoURL;
+						let userData = usersRepo.getUserData(email, displayName);
 
-					return;
-				}
-				else {
-					let email = authData.currentUser.email;
-					let displayName = authData.currentUser.displayName;
-					let photoUrl = authData.currentUser.photoURL;
-					let userData = usersRepo.getUserData(email, displayName);
-
-					let user = new User(userData.id, displayName, email, photoUrl, userData.role);
-					window.localStorage.setItem('user', JSON.stringify(user));
-				}
+						let user = new User(userData.id, displayName, email, photoUrl, userData.role);
+						window.localStorage.setItem('user', JSON.stringify(user));
+					}
+				});
 			});
 		}
 	}

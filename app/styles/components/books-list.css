@@ -1,17 +1,22 @@
 #books-list {
 }
 
-.grid-sizer {
-	width: 20%;
-}
-
 .book {
-	width: 40%;
-	float: left;
+	display: inline-block;
+	width: 15.8%;
+	border: 0;
+	padding: 0;
 	border-radius: 3px;
+	float: left;
+	margin-right: 1%;
+	margin-bottom: 1%;
 	-webkit-box-shadow: 0px 6px 5px 0px rgba(138,133,138,1);
 	-moz-box-shadow: 0px 6px 5px 0px rgba(138,133,138,1);
 	box-shadow: 0px 6px 5px 0px rgba(138,133,138,1);
+}
+
+#books-list a:nth-child(6n) img {
+	margin-right: 0;
 }
 
 .book:hover {
@@ -23,6 +28,7 @@
 @media only screen and (max-device-width: 600px) {
 
 	.book {
+		width: 48%;
 	}
 
 }

@@ -9,8 +9,7 @@ export default Component.extend({
 
 	options: Object.create({
 		itemSelector: '.book',
-		columnWidth: '.grid-sizer',
-		percentPosition: true,
+		columnWidth: 1
   }),
 
 	init: function () {

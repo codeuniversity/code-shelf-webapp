@@ -3,19 +3,19 @@
 
 .book {
 	display: inline-block;
-	width: 15.8%;
+	width: 13%;
 	border: 0;
 	padding: 0;
 	border-radius: 3px;
 	float: left;
-	margin-right: 1%;
-	margin-bottom: 1%;
+	margin-right: 1.5%;
+	margin-bottom: 1.5%;
 	-webkit-box-shadow: 0px 6px 5px 0px rgba(138,133,138,1);
 	-moz-box-shadow: 0px 6px 5px 0px rgba(138,133,138,1);
 	box-shadow: 0px 6px 5px 0px rgba(138,133,138,1);
 }
 
-#books-list a:nth-child(6n) img {
+#books-list a:nth-child(7n) img {
 	margin-right: 0;
 }
 

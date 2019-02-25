@@ -1,0 +1,5 @@
+{{#if session.isAuthenticated}}
+	{{page-header userGoogleData=session.currentUser}}
+{{else}}
+	{{landing-page}}
+{{/if}}

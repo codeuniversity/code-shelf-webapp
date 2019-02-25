@@ -8,7 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('unauthorized');
-  this.route('book');
+  this.route('book', {path: '/book/:book_id'});
 });
 
 Router.reopen({

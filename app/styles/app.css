@@ -1,7 +1,10 @@
 @import 'base.css';
 @import 'pace.css';
 
+@import 'pages/book.css';
+
 @import 'components/dash-board.css';
 @import 'components/books-list.css';
-@import 'components/landing-page.css';
 @import 'components/page-header.css';
+@import 'components/book-details.css';
+@import 'components/landing-page.css';

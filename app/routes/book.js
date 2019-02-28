@@ -10,7 +10,9 @@ export default Route.extend({
   },
 
 	model: function (parameters) {
-		return this.get('booksRepository').getBookSync(parameters.book_id);
+		return {
+			book: this.get('booksRepository').getBookSync(parameters.book_id)
+		}
 	}
 
 });

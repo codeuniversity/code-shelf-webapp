@@ -11,16 +11,6 @@ module('Integration | Component | barcode-reader', function(hooks) {
     // Handle any actions with this.set('myAction', function(val) { ... });
 
     await render(hbs`{{barcode-reader}}`);
-
     assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#barcode-reader}}
-        template block text
-      {{/barcode-reader}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

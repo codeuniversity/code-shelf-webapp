@@ -25,7 +25,7 @@ export default Service.extend({
 	getBookByIsbn: function(isbn) {
 		return $.parseJSON($.ajax({
 				type: 'GET',
-				url: ENV.SERVER_URL + ENV.BOOK_EXISTENCE_ENDPOINT + '/' + isbn,
+				url: ENV.SERVER_URL + ENV.BOOK_DATA_BY_ISBN_ENPOINT + '/' + isbn,
 				async: false
 			}).responseText
 		);

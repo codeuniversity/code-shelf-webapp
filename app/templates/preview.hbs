@@ -1,6 +1,6 @@
 {{#if session.isAuthenticated}}
 	{{page-header userGoogleData=session.currentUser}}
-	{{book-details book=model.book}}
+	{{book-preview book=model.book}}
 {{else}}
 	{{landing-page}}
 {{/if}}

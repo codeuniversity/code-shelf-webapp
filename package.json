@@ -52,7 +52,6 @@
     "node": "6.* || 8.* || >= 10.*"
   },
   "dependencies": {
-    "masonry-layout": "^4.2.2",
     "quagga": "^0.12.1"
   }
 }

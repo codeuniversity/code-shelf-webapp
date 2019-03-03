@@ -61,11 +61,14 @@ module.exports = function(environment) {
   }
 
   ENV.SERVER_URL = process.env.SERVER_URL;
-  ENV.EXISTENCE_ENDPOINT = '/user/exists';
+  ENV.USER_EXISTENCE_ENDPOINT = '/user/exists';
   ENV.USER_DATA_ENDPOINT = '/user';
   ENV.AUTHORIZATION_ENDPOINT = '/user/authorized';
 
   ENV.BOOKS_ENDPOINT = '/book';
+  ENV.BOOK_DATA_BY_ISBN_ENPOINT = '/book/isbn';
+  ENV.BOOK_PREVIEW_ENPOINT = '/book/preview';
+  ENV.BOOK_EXISTENCE_ENDPOINT = '/book/exists';
 
   return ENV;
 };

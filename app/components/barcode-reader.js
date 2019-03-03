@@ -36,7 +36,7 @@ export default Component.extend({
 			});
 
 			Quagga.onDetected((result) => {
-        alert(result.codeResult.code);
+        window.location.href = '/preview/' + result.codeResult.code;
       });
 		}
 

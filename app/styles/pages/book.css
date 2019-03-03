@@ -3,3 +3,11 @@
 	padding: 10px 0;
 	margin: auto;
 }
+
+@media only screen and (max-device-width: 600px) {
+
+	#book-main {
+		width: 90%;
+	}
+
+}

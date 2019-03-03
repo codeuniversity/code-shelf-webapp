@@ -15,10 +15,6 @@ export default Component.extend({
 					type : "LiveStream",
 					target: document.querySelector('#cameraView'),
 					constraints: {
-            width: $(window).width(),
-            height: $(window).height(),
-            facingMode: "environment",
-            aspectRatio: {min: 1, max: 2}
           }
 				},
 				decoder : {

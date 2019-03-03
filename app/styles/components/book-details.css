@@ -1,5 +1,4 @@
 #book-details-title {
-	text-shadow: 1px 1px 5px rgba(138,133,138,1);
 	margin-bottom: 7px;
 	margin-right: 5px;
 	display: inline-block;
@@ -12,7 +11,7 @@
 	width: max-content;
 	color: #fff;
 	display: inline-block;
-	font-size: 0.8em;
+	font-size: 0.9em;
 	-webkit-box-shadow: 1px 1px 5px rgba(138,133,138,1);
 	-moz-box-shadow: 1px 1px 5px rgba(138,133,138,1);
 	box-shadow: 1px 1px 5px rgba(138,133,138,1);
@@ -57,6 +56,7 @@
 	#book-details-title {
 		display: block;
 	}
+
 	#book-details-status {
 		margin-bottom: 25px;
 		width: 100%;

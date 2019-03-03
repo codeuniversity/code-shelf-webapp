@@ -25,7 +25,10 @@ export default Component.extend({
 					console.log(err);
 					return
 				}
+				
 				Quagga.start();
+				$("#cameraView video").css("width", "100%");
+				$("#cameraView video").css("height", "100%");
 			});
 		}
 	},

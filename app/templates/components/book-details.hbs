@@ -1,5 +1,7 @@
 <div id="book-main">
 	<h2 id="book-details-title">{{book.title}}</h2>
+	<div id="book-details-status" class={{availabilityClass}}>{{formattedStatus}}</div>
+	<br>
 	<img src={{book.imageUrl}} id="book-details-cover" alt="Book Cover">
 	<span id="book-details-description">{{book.description}}</span>
 </div>

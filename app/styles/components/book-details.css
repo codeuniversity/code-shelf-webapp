@@ -1,6 +1,26 @@
 #book-details-title {
 	text-shadow: 1px 1px 5px rgba(138,133,138,1);
+	margin-bottom: 7px;
+	margin-right: 5px;
+	display: inline-block;
+}
+
+#book-details-status {
 	margin-bottom: 35px;
+	padding: 5px;
+	border-radius: 3px;
+	width: max-content;
+	color: #fff;
+	display: inline-block;
+	font-size: 0.8em;
+}
+
+.available-book {
+	background-color: #43d58c;
+}
+
+.unavailable-book {
+	background-color: #ff6a6a;
 }
 
 #book-details-cover {

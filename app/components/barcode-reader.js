@@ -15,17 +15,22 @@ export default Component.extend({
 					type : "LiveStream",
 					target: document.querySelector('#cameraView'),
 					constraints: {
-          }
+						facingMode: "environment"
+					}
 				},
 				decoder : {
-					readers : ["code_128_reader"]
-				}
+					readers: [
+						"ean_reader",
+						"ean_8_reader"
+					],
+				},
+				locate: true,
 			}, function(err) {
 				if (err) {
 					console.log(err);
 					return
 				}
-				
+
 				Quagga.start();
 				$("#cameraView video").css("width", "100%");
 				$("#cameraView video").css("height", "100%");

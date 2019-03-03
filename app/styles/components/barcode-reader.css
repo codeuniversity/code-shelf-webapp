@@ -26,6 +26,12 @@
 	left: 0;
 }
 
+canvas.drawing, canvas.drawingBuffer {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 @media only screen and (max-device-width: 600px) {
 
 	#camera-fab {

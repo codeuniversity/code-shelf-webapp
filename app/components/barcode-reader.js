@@ -57,6 +57,10 @@ export default Component.extend({
 					}
 				}
 			});
+
+			Quagga.onDetected((result) => {
+        alert(result.codeResult.code);
+      });
 		}
 
 	}

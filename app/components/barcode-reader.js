@@ -20,8 +20,8 @@ export default Component.extend({
 				},
 				decoder : {
 					readers: [
-					"ean_reader",
-					"ean_8_reader"
+						"ean_reader",
+						"ean_8_reader"
 					],
 				},
 				locate: true,

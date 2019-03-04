@@ -49,7 +49,7 @@ export default Service.extend({
 		);
 	},
 
-	preview: function(isbn) {
+	getPreview: function(isbn) {
 		return $.parseJSON($.ajax({
 				type: 'GET',
 				url: ENV.SERVER_URL + ENV.BOOK_PREVIEW_ENDPOINT + '/' + isbn,

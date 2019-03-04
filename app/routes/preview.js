@@ -11,7 +11,7 @@ export default Route.extend({
 
 	model: function (parameters) {
 		return {
-			book: this.get('booksRepository').getPreview(parameters.isbn)
+			book: this.get('booksRepository').getPreview(parameters.book_isbn)
 		}
 	}
 

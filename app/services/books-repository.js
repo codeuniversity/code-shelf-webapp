@@ -7,7 +7,7 @@ export default Service.extend({
 	ajax: inject(),
 
 	addBook: function (isbn, userId) {
-		return this.get('ajax').post(ENV.BOOKS_ENDPOINT, { 
+		return this.get('ajax').post(ENV.BOOKS_ENDPOINT, {
 			data: {
 				isbn: isbn,
 				userId: userId
@@ -57,6 +57,15 @@ export default Service.extend({
 				async: false
 			}).responseText
 		);
-	})
+	}),
+
+	checkout: function (bookId, userId) {
+		return this.get('ajax').post(ENV.BOOK_CHECKOUT_ENDPOINT, {
+			data: {
+				bookId: bookId,
+				userId: userId
+			}
+		});
+	}
 
 });

@@ -5,24 +5,28 @@ import { computed } from '@ember/object';
 export default Component.extend({
 	booksRepository: inject(),
 
+	init: function () {
+		this._super(...arguments);
+		this.isbn = this.get('book').isbn;
+		this.availabilty = this.get('booksRepository').getBookByIsbn(this.get('isbn')).status;
+		this.book = this.get('booksRepository').getBookByIsbn(this.get('isbn'));
+		this.user = JSON.parse(window.localStorage.getItem('user'));
+	},
+
 	userIsAdmin: computed(() => {
-		let user = JSON.parse(window.localStorage.getItem('user'));
-		return user._role === 'ADMIN';
+		return this.get('user')._role === 'ADMIN';
 	}),
 
 	bookExists: computed(function () {
-		let isbn = this.get('book').isbn;
-		return this.get('booksRepository').exists(isbn);
+		return this.get('booksRepository').exists(this.get('isbn'));
 	}),
 
 	bookIsAvailable: computed(function () {
-		return this.get('book').status === 'AVAILABLE';
+		return this.get('availabilty') === "AVAILABLE";
 	}),
 
 	availabilityClass: computed(function () {
-		let availabilty = this.get('book').status;
-
-		if (availabilty === "AVAILABLE") {
+		if (this.get('availabilty') === "AVAILABLE") {
 			return 'available-book';
 		}
 		else {
@@ -31,8 +35,7 @@ export default Component.extend({
 	}),
 
 	formattedStatus: computed(function () {
-		return this.get('book')
-			.status
+		return this.get('availabilty')
 			.toLowerCase()
 			.split(' ')
 			.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
@@ -42,8 +45,8 @@ export default Component.extend({
 	actions: {
 
 		addBook: function() {
-			let user = JSON.parse(window.localStorage.getItem('user'));
-			let isbn = this.get('book').isbn;
+			let isbn = this.get('isbn');
+			let user = this.get('user');
 
 			this.get('booksRepository').addBook(isbn, user._id).then(response => {
 				alert(response.title + ' added to library');
@@ -54,7 +57,14 @@ export default Component.extend({
 		},
 
 		checkoutBook: function () {
+			let book = this.get('book');
+			let user = this.get('user');
 
+			this.get('booksRepository').checkout(book.id, user._id).then(() => {
+				alert('checked out ' + book.title);
+				// TODO style notification
+				window.location.reload();
+			});
 		}
 
 	}

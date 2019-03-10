@@ -71,6 +71,7 @@ module.exports = function(environment) {
   ENV.BOOK_EXISTENCE_ENDPOINT = '/book/exists/';
 
   ENV.BOOK_REVIEWS_ENDPOINT = '/review/';
+  ENV.BOOK_CHECKOUT_ENDPOINT = '/book/checkout/';
 
   return ENV;
 };

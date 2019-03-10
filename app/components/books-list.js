@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import { inject } from '@ember/service';
 import Component from '@ember/component';
 
@@ -12,12 +13,23 @@ export default Component.extend({
 	},
 
 	didInsertElement: function () {
+		let self = this;
+
+		$(window).scroll(() => {
+			if($(window).scrollTop() + $(window).height() == $(document).height()) {
+				self.getNextBooks();
+			}
+		});
+
 		this.getNextBooks();
 	},
 
 	getNextBooks: function () {
-		this.get('booksRepository').getBooksListPage(page++).then(response => {
-			this.get('books').pushObjects(response);
+		this.get('booksRepository').getBooksListPage(page++).then(books => {
+			this.get('books').pushObjects(books);
+			if (books.length === 0) {
+				page--;
+			}
 		});
 	}
 

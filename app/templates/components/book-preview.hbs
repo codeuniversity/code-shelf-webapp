@@ -1,11 +1,21 @@
 <div id="book-main">
 	<h2 id="book-preview-title">{{book.title}}</h2>
+	{{#if bookExists}}
+		<div id="book-details-status" class={{availabilityClass}}>{{formattedStatus}}</div>
+	{{/if}}
+
 	<br>
 	<img src={{book.imageUrl}} id="book-preview-cover" alt="Book Cover">
 	<div id="book-preview-description">{{book.description}}</div>
 
-	{{#if isAdmin}}
-		<button {{action "addBook"}} id="btn-add-book" title="Add {{book.title}} to the Library">Add to Library</button>
+	{{#if bookExists}}
+		{{#if bookIsAvailable}}
+			<button {{action "checkoutBook"}} class="btn-book-preview" title="Checkout {{book.title}}">Checkout</button>
+		{{/if}}
+	{{else}}
+		{{#if userIsAdmin}}
+			<button {{action "addBook"}} class="btn-book-preview" title="Add {{book.title}} to the Library">Add to Library</button>
+		{{/if}}
 	{{/if}}
 
 	{{barcode-reader}}

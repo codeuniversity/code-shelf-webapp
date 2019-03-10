@@ -5,9 +5,38 @@ import { computed } from '@ember/object';
 export default Component.extend({
 	booksRepository: inject(),
 
-	isAdmin: computed(() => {
+	userIsAdmin: computed(() => {
 		let user = JSON.parse(window.localStorage.getItem('user'));
 		return user._role === 'ADMIN';
+	}),
+
+	bookExists: computed(function () {
+		let isbn = this.get('book').isbn;
+		return this.get('booksRepository').exists(isbn);
+	}),
+
+	bookIsAvailable: computed(function () {
+		return this.get('book').status === 'AVAILABLE';
+	}),
+
+	availabilityClass: computed(function () {
+		let availabilty = this.get('book').status;
+
+		if (availabilty === "AVAILABLE") {
+			return 'available-book';
+		}
+		else {
+			return 'unavailable-book';
+		}
+	}),
+
+	formattedStatus: computed(function () {
+		return this.get('book')
+			.status
+			.toLowerCase()
+			.split(' ')
+			.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+			.join(' ');
 	}),
 
 	actions: {
@@ -22,6 +51,10 @@ export default Component.extend({
 			}).catch(error => {
 				console.log(error);
 			});
+		},
+
+		checkoutBook: function () {
+
 		}
 
 	}

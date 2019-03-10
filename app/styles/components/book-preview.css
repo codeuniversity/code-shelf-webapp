@@ -31,7 +31,7 @@
 	box-shadow: 1px 1px 5px rgba(138,133,138,1);
 }
 
-#btn-add-book {
+.btn-book-preview {
 	width: max-content;
 	padding: 10px;
 	border-radius: 3px;
@@ -46,7 +46,7 @@
 	box-shadow: 1px 1px 5px rgba(138,133,138,1);
 }
 
-#btn-add-book:active {
+.btn-book-preview:active {
 	outline: none;
 }
 
@@ -73,7 +73,7 @@
 		margin-bottom: 25px;
 	}
 
-	#btn-add-book {
+	.btn-book-preview {
 		width: 100%;
 		margin: auto;
 	}

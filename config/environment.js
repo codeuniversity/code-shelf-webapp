@@ -70,5 +70,7 @@ module.exports = function(environment) {
   ENV.BOOK_PREVIEW_ENPOINT = '/book/preview';
   ENV.BOOK_EXISTENCE_ENDPOINT = '/book/exists';
 
+  ENV.BOOK_REVIEWS_ENDPOINT = '/review';
+
   return ENV;
 };

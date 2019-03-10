@@ -17,7 +17,8 @@ export default Component.extend({
 			let isbn = this.get('book').isbn;
 
 			this.get('booksRepository').addBook(isbn, user._id).then(response => {
-				console.log(response);
+				alert(response.title + ' added to library');
+				// TODO style notification
 			}).catch(error => {
 				console.log(error);
 			});

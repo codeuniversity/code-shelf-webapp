@@ -5,7 +5,7 @@
 	<div id="book-preview-description">{{book.description}}</div>
 
 	{{#if isAdmin}}
-		<button>Add book</button>
+		<button id="btn-add-book" title="Add {{book.title}} to the Library">Add to Library</button>
 	{{/if}}
 
 	{{barcode-reader}}

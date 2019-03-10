@@ -15,6 +15,8 @@
 	{{else}}
 		{{#if userIsAdmin}}
 			<button {{action "addBook"}} class="btn-book-preview" title="Add {{book.title}} to the Library">Add to Library</button>
+		{{else}}
+			<button class="btn-book-preview" title="Request for {{book.title}} to be added to the Library">Request</button>
 		{{/if}}
 	{{/if}}
 

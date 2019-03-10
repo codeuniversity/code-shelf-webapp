@@ -44,9 +44,9 @@
 
 .filter-field:focus {
 	outline: none;
-	-webkit-box-shadow: 0px 1px 5px 1px rgba(138,133,138,1);
-	-moz-box-shadow: 0px 1px 5px 1px rgba(138,133,138,1);
-	box-shadow: 0px 1px 5px 1px rgba(138,133,138,1);
+	-webkit-box-shadow: 1px 1px 5px rgba(138,133,138,1);
+	-moz-box-shadow: 1px 1px 5px rgba(138,133,138,1);
+	box-shadow: 1px 1px 5px rgba(138,133,138,1);
 }
 
 @media only screen and (max-device-width: 600px) {

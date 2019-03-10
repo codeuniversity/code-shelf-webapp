@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import Service from '@ember/service';
 import { inject } from '@ember/service';
 import ENV from 'code-shelf-webapp/config/environment';
@@ -14,13 +15,16 @@ export default Service.extend({
 	},
 
 	getUserData: function(email, displayName) {
-		return this.get('ajax').request(ENV.USER_DATA_ENDPOINT, {
-			method: 'GET',
-			data: {
-				'email': email,
-				'displayName': displayName
-			}
-		});
+		return $.parseJSON($.ajax({
+				type: 'GET',
+				url: ENV.SERVER_URL + ENV.USER_DATA_ENDPOINT,
+				async: false,
+				data: {
+					'email': email,
+					'displayName': displayName
+				}
+			}).responseText
+		);
 	}
 
 });

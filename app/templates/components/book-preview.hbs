@@ -3,5 +3,10 @@
 	<br>
 	<img src={{book.imageUrl}} id="book-preview-cover" alt="Book Cover">
 	<div id="book-preview-description">{{book.description}}</div>
+
+	{{#if isAdmin}}
+		<button>Add book</button>
+	{{/if}}
+
 	{{barcode-reader}}
 </div>

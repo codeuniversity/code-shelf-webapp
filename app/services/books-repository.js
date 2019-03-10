@@ -23,40 +23,40 @@ export default Service.extend({
 		return this.get('ajax').request(ENV.BOOKS_ENDPOINT + '/' + id);
 	},
 
-	getBookByIsbn: function(isbn) {
+	getBookByIsbn: (isbn => {
 		return $.parseJSON($.ajax({
 				type: 'GET',
 				url: ENV.SERVER_URL + ENV.BOOK_DATA_BY_ISBN_ENPOINT + '/' + isbn,
 				async: false
 			}).responseText
 		);
-	},
+	}),
 
-	getBookSync: function (id) {
+	getBookSync: (id => {
 		return $.parseJSON($.ajax({
 				type: 'GET',
 				url: ENV.SERVER_URL + ENV.BOOKS_ENDPOINT + '/' + id,
 				async: false
 			}).responseText
 		);
-	},
+	}),
 
-	exists: function(isbn) {
+	exists: (isbn => {
 		return $.parseJSON($.ajax({
 				type: 'GET',
 				url: ENV.SERVER_URL + ENV.BOOK_EXISTENCE_ENDPOINT + '/' + isbn,
 				async: false
 			}).responseText
 		);
-	},
+	}),
 
-	getPreview: function(isbn) {
+	getPreview: (isbn => {
 		return $.parseJSON($.ajax({
 				type: 'GET',
 				url: ENV.SERVER_URL + ENV.BOOK_PREVIEW_ENPOINT + '/' + isbn,
 				async: false
 			}).responseText
 		);
-	}
+	})
 
 });

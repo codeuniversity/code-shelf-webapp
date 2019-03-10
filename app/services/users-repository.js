@@ -14,7 +14,7 @@ export default Service.extend({
 		return this.get('ajax').request(ENV.AUTHORIZATION_ENDPOINT + '/' + email);
 	},
 
-	getUserData: function(email, displayName) {
+	getUserData: ((email, displayName) => {
 		return $.parseJSON($.ajax({
 				type: 'GET',
 				url: ENV.SERVER_URL + ENV.USER_DATA_ENDPOINT,
@@ -25,6 +25,6 @@ export default Service.extend({
 				}
 			}).responseText
 		);
-	}
+	})
 
 });

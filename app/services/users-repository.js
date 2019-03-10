@@ -7,11 +7,11 @@ export default Service.extend({
 	ajax: inject(),
 
 	exists: function(email) {
-		return this.get('ajax').request(ENV.USER_EXISTENCE_ENDPOINT + '/' + email);
+		return this.get('ajax').request(ENV.USER_EXISTENCE_ENDPOINT + email);
 	},
 
 	isAuthorized: function(email) {
-		return this.get('ajax').request(ENV.AUTHORIZATION_ENDPOINT + '/' + email);
+		return this.get('ajax').request(ENV.AUTHORIZATION_ENDPOINT + email);
 	},
 
 	getUserData: ((email, displayName) => {

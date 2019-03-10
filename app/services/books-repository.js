@@ -16,17 +16,17 @@ export default Service.extend({
 	},
 
 	getBooksListPage: function (page) {
-		return this.get('ajax').request(ENV.BOOKS_ENDPOINT + '/page/' + page);
+		return this.get('ajax').request(ENV.BOOKS_ENDPOINT + 'page/' + page);
 	},
 
 	getBook: function (id) {
-		return this.get('ajax').request(ENV.BOOKS_ENDPOINT + '/' + id);
+		return this.get('ajax').request(ENV.BOOKS_ENDPOINT + id);
 	},
 
 	getBookByIsbn: (isbn => {
 		return $.parseJSON($.ajax({
 				type: 'GET',
-				url: ENV.SERVER_URL + ENV.BOOK_DATA_BY_ISBN_ENPOINT + '/' + isbn,
+				url: ENV.SERVER_URL + ENV.BOOK_DATA_BY_ISBN_ENPOINT + isbn,
 				async: false
 			}).responseText
 		);
@@ -35,7 +35,7 @@ export default Service.extend({
 	getBookSync: (id => {
 		return $.parseJSON($.ajax({
 				type: 'GET',
-				url: ENV.SERVER_URL + ENV.BOOKS_ENDPOINT + '/' + id,
+				url: ENV.SERVER_URL + ENV.BOOKS_ENDPOINT + id,
 				async: false
 			}).responseText
 		);
@@ -44,7 +44,7 @@ export default Service.extend({
 	exists: (isbn => {
 		return $.parseJSON($.ajax({
 				type: 'GET',
-				url: ENV.SERVER_URL + ENV.BOOK_EXISTENCE_ENDPOINT + '/' + isbn,
+				url: ENV.SERVER_URL + ENV.BOOK_EXISTENCE_ENDPOINT + isbn,
 				async: false
 			}).responseText
 		);
@@ -53,7 +53,7 @@ export default Service.extend({
 	getPreview: (isbn => {
 		return $.parseJSON($.ajax({
 				type: 'GET',
-				url: ENV.SERVER_URL + ENV.BOOK_PREVIEW_ENPOINT + '/' + isbn,
+				url: ENV.SERVER_URL + ENV.BOOK_PREVIEW_ENPOINT + isbn,
 				async: false
 			}).responseText
 		);

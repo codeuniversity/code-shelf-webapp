@@ -2,6 +2,7 @@
 @import 'pace.css';
 
 @import 'pages/book.css';
+@import 'pages/history.css';
 @import 'pages/preview.css';
 
 @import 'components/dash-board.css';

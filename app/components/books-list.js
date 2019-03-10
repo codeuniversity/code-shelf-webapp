@@ -14,6 +14,7 @@ export default Component.extend({
 
 	didInsertElement: function () {
 		let self = this;
+		page = 1;
 
 		$(window).scroll(() => {
 			if($(window).scrollTop() + $(window).height() == $(document).height()) {

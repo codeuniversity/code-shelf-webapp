@@ -5,6 +5,7 @@
 		<img id="display-picture" src={{userGoogleData.photoURL}} alt="{{userGoogleData.displayName}}'s profile picture" title="{{userGoogleData.displayName}}'s profile picture">
 
 		<div id="drop-down" class="transitions">
+			{{#link-to "history" class="drop-down-item transitions" title="View the booky you have checked out"}}History{{/link-to}}
 			<a href="#" class="drop-down-item transitions" {{action "signOut"}} title="Sigh Out">Sign Out</a>
 		</div>
 	</div>

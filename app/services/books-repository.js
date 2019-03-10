@@ -6,10 +6,11 @@ import ENV from 'code-shelf-webapp/config/environment';
 export default Service.extend({
 	ajax: inject(),
 
-	addBook: function (isbn) {
+	addBook: function (isbn, userId) {
 		return this.get('ajax').post(ENV.BOOKS_ENDPOINT, { 
 			data: {
-				isbn: isbn
+				isbn: isbn,
+				userId: userId
 			}
 		});
 	},

@@ -46,6 +46,10 @@
 	box-shadow: 1px 1px 5px rgba(138,133,138,1);
 }
 
+#btn-add-book:active {
+	outline: none;
+}
+
 @media only screen and (max-device-width: 600px) {
 
 	#book-preview-title {

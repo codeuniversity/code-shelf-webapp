@@ -1,8 +1,10 @@
 import $ from 'jquery';
 import Quagga from 'npm:quagga';
+import { inject } from '@ember/service';
 import Component from '@ember/component';
 
 export default Component.extend({
+	booksRepository: inject(),
 
 	actions: {
 
@@ -36,7 +38,14 @@ export default Component.extend({
 			});
 
 			Quagga.onDetected((result) => {
-        window.location.href = '/preview/' + result.codeResult.code;
+				let preview = this.get('booksRepository').getPreview(result.codeResult.code);
+
+				if (preview.status === 404) {
+					alert("No matching books found on google books.");
+					// TODO style notification
+				} else {
+					window.location.href = '/preview/' + result.codeResult.code;
+				}
       });
 		}
 

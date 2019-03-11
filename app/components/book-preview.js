@@ -13,8 +13,12 @@ export default Component.extend({
 		this.user = JSON.parse(window.localStorage.getItem('user'));
 	},
 
-	userIsAdmin: computed(() => {
+	userIsAdmin: computed(function () {
 		return this.get('user')._role === 'ADMIN';
+	}),
+
+	userIsWithBook: computed(function () {
+		return this.get('user')._email === this.get('book').currentUser.email;
 	}),
 
 	bookExists: computed(function () {
@@ -62,6 +66,17 @@ export default Component.extend({
 
 			this.get('booksRepository').checkout(book.id, user._id).then(() => {
 				alert('checked out ' + book.title);
+				// TODO style notification
+				window.location.reload();
+			});
+		},
+
+		returnBook: function () {
+			let book = this.get('book');
+			let user = this.get('user');
+
+			this.get('booksRepository').returnBook(book.id, user._id).then(() => {
+				alert('returned ' + book.title);
 				// TODO style notification
 				window.location.reload();
 			});

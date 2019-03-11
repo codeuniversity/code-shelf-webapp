@@ -66,6 +66,15 @@ export default Service.extend({
 				userId: userId
 			}
 		});
+	},
+
+	returnBook: function (bookId, userId) {
+		return this.get('ajax').post(ENV.BOOK_RETURN_ENDPOINT, {
+			data: {
+				bookId: bookId,
+				userId: userId
+			}
+		});
 	}
 
 });

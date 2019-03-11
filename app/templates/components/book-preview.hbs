@@ -6,21 +6,24 @@
 
 	<br>
 	<img src={{book.imageUrl}} id="book-preview-cover" alt="Book Cover">
-	<div id="book-preview-description">{{book.description}}</div>
 
-	{{#if bookExists}}
-		{{#if bookIsAvailable}}
-			<button {{action "checkoutBook"}} class="btn-book-preview" title="Checkout {{book.title}}">Checkout</button>
-		{{else if userIsWithBook}}
-			<button {{action "returnBook"}} class="btn-book-preview" title="Return {{book.title}}">Return</button>
-		{{/if}}
-	{{else}}
-		{{#if userIsAdmin}}
-			<button {{action "addBook"}} class="btn-book-preview" title="Add {{book.title}} to the Library">Add to Library</button>
+	<div id="book-preview-right">
+		<div id="book-preview-description">{{book.description}}</div>
+
+		{{#if bookExists}}
+			{{#if bookIsAvailable}}
+				<button {{action "checkoutBook"}} class="btn-book-preview" title="Checkout {{book.title}}">Checkout</button>
+			{{else if userIsWithBook}}
+				<button {{action "returnBook"}} class="btn-book-preview" title="Return {{book.title}}">Return</button>
+			{{/if}}
 		{{else}}
-			<button class="btn-book-preview" title="Request for {{book.title}} to be added to the Library">Request</button>
+			{{#if userIsAdmin}}
+				<button {{action "addBook"}} class="btn-book-preview" title="Add {{book.title}} to the Library">Add to Library</button>
+			{{else}}
+				<button class="btn-book-preview" title="Request for {{book.title}} to be added to the Library">Request</button>
+			{{/if}}
 		{{/if}}
-	{{/if}}
+	</div>
 
 	{{barcode-reader}}
 </div>

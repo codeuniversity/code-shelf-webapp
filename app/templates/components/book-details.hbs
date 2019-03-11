@@ -3,9 +3,11 @@
 	<div id="book-details-status" class={{availabilityClass}}>{{formattedStatus}}</div>
 	<br>
 	<img src={{book.imageUrl}} id="book-details-cover" alt="Book Cover" title={{book.title}}>
-	<div id="book-details-description">{{book.description}}</div>
 
-	{{book-reviews bookId=book.id}}
+	<div id="book-preview-right">
+		<div id="book-details-description">{{book.description}}</div>
+		{{book-reviews bookId=book.id}}
+	</div>
 
 	{{#if bookIsAvailable}}
 		{{barcode-reader}}

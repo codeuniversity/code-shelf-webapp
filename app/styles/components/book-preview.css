@@ -50,6 +50,10 @@
 	outline: none;
 }
 
+.btn-book-preview:focus {
+	outline: none;
+}
+
 @media only screen and (max-device-width: 600px) {
 
 	#book-preview-title {

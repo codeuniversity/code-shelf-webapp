@@ -8,9 +8,16 @@ export default Component.extend({
 	init: function () {
 		this._super(...arguments);
 		this.isbn = this.get('book').isbn;
-		this.availabilty = this.get('booksRepository').getBookByIsbn(this.get('isbn')).status;
-		this.book = this.get('booksRepository').getBookByIsbn(this.get('isbn'));
 		this.user = JSON.parse(window.localStorage.getItem('user'));
+
+		if (this.get('booksRepository').exists(this.get('isbn'))) {
+			this.availabilty = this.get('booksRepository').getBookByIsbn(this.get('isbn')).status;
+			this.book = this.get('booksRepository').getBookByIsbn(this.get('isbn'));
+		}
+		else {
+			this.availabilty = this.get('book').status;
+			this.book = this.get('book');
+		}
 	},
 
 	userIsAdmin: computed(function () {
@@ -55,6 +62,7 @@ export default Component.extend({
 			this.get('booksRepository').addBook(isbn, user._id).then(response => {
 				alert(response.title + ' added to library');
 				// TODO style notification
+				window.location.reload();
 			}).catch(error => {
 				console.log(error);
 			});

@@ -24,10 +24,41 @@
 	box-shadow: 1px 1px 5px rgba(138,133,138,1);
 }
 
+.review-wrapper {
+	margin-bottom: 35px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #cccccc;
+	background-color: #cccccc;
+	position: relative;
+}
+
+.review-wrapper:after {
+	border-left: 20px solid transparent;
+	border-top: 20px solid #cccccc;
+	bottom: -20px;
+	content: "";
+	position: absolute;
+	right: 20px;
+}
+
+.reviewer {
+	color: #3299cc;
+	font-size: .8em;
+}
+
+.review {
+	margin-top: 3px;
+	font-size: .9em;
+}
+
 @media only screen and (max-device-width: 600px) {
 
 	#reviews {
 		margin: auto;
+	}
+
+	.review-wrapper:after {
 	}
 
 }

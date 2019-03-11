@@ -47,6 +47,10 @@ button:active {
 	outline: none;
 }
 
+textarea:focus {
+	outline: none;
+}
+
 .transitions{
 	transition: .5s;
 	-moz-transition: .5s;

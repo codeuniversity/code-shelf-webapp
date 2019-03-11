@@ -29,6 +29,7 @@ export default Component.extend({
 				this.get('bookReviewsRepository').addReview(bookId, user._id, review).then((reviews) => {
 					this.set('reviews', []);
 					this.get('reviews').pushObjects(reviews);
+					$('#review-input-area').val('');
 				});
 			}
 		}

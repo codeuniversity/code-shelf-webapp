@@ -2,6 +2,7 @@
 	<h3>Reviews</h3>
 	<textarea id="review-input-area" class="transitions" placeholder="Add a review"></textarea>
 	<button {{action "addReview"}} class="btn-book-preview">Add review</button>
+	<br><br><br>
 
 	{{#each reviews key="@index" as |review|}}
 		<div class="review-wrapper">

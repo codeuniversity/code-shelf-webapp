@@ -4,6 +4,10 @@
 	<br>
 	<img src={{book.imageUrl}} id="book-details-cover" alt="Book Cover" title={{book.title}}>
 	<div id="book-details-description">{{book.description}}</div>
+
 	{{book-reviews bookId=book.id}}
-	{{barcode-reader}}
+
+	{{#if bookIsAvailable}}
+		{{barcode-reader}}
+	{{/if}}
 </div>

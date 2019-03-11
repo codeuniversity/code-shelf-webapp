@@ -3,6 +3,10 @@ import { computed } from '@ember/object';
 
 export default Component.extend({
 
+	bookIsAvailable: computed(function () {
+		return this.get('book').status === "AVAILABLE";
+	}),
+
 	availabilityClass: computed(function () {
 		let availabilty = this.get('book').status;
 

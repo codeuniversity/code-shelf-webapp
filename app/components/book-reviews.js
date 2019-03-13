@@ -18,7 +18,7 @@ export default Component.extend({
 	actions: {
 
 		addReview: function () {
-			let bookId = this.get('bookId');
+			let bookId = this.get('book').id;
 			let user = JSON.parse(window.localStorage.getItem('user'));
 			let review = $('#review-input-area').val();
 

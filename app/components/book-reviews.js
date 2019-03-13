@@ -11,11 +11,8 @@ export default Component.extend({
 	},
 
 	didInsertElement: function () {
-		let bookId = this.get('bookId');
-
-		this.get('bookReviewsRepository').getReviews(bookId).then(reviews => {
-			this.get('reviews').pushObjects(reviews);
-		});
+		let book = this.get('book');
+		this.get('reviews').pushObjects(book.reviews);
 	},
 
 	actions: {

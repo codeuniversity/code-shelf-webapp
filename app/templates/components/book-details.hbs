@@ -6,7 +6,7 @@
 
 	<div id="book-preview-right">
 		<div id="book-details-description">{{book.description}}</div>
-		{{book-reviews bookId=book.id}}
+		{{book-reviews book=book}}
 	</div>
 
 	{{#if bookIsAvailable}}

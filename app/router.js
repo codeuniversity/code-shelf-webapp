@@ -1,9 +1,25 @@
 import EmberRouter from '@ember/routing/router';
 import config from './config/environment';
+import { inject } from '@ember/service';
 
 const Router = EmberRouter.extend({
   location: config.locationType,
-  rootURL: config.rootURL
+  rootURL: config.rootURL,
+  optimize: inject(),
+
+  didTransition() {
+    this._super(...arguments);
+    this._activateOptimize();
+  },
+
+  _activateOptimize() {
+     /*eslint-disable */
+    scheduleOnce("afterRender", this, () => {
+      get(this, "optimize").activate();
+    });
+    /*eslint-enable */
+  }
+
 });
 
 Router.map(function() {

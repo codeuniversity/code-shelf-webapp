@@ -58,6 +58,9 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.googleOptimize = {
+      container: "GTM-TRBRLX6"
+    };
   }
 
   ENV.SERVER_URL = process.env.SERVER_URL;

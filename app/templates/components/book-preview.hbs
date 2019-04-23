@@ -15,6 +15,7 @@
 				<button {{action "checkoutBook"}} class="btn-book-preview" title="Checkout {{book.title}}">Checkout</button>
 			{{else if userIsWithBook}}
 				<button {{action "returnBook"}} class="btn-book-preview" title="Return {{book.title}}">Return</button>
+				<button {{action "addReview"}} id="btn-reviiew-at-return" class="btn-book-preview" title="Add a review for {{book.title}}">Add review</button>
 			{{/if}}
 		{{else}}
 			{{#if userIsAdmin}}

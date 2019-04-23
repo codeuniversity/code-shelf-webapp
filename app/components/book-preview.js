@@ -88,7 +88,9 @@ export default Component.extend({
 				// TODO style notification
 				window.location.reload();
 			});
-		}
+		},
+
+		addReview: function () {}
 
 	}
 

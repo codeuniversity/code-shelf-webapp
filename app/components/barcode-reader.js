@@ -34,7 +34,6 @@ export default Component.extend({
 				}
 
 				Quagga.start();
-				$("#cameraView video").css("width", "100%");
 			});
 
 			Quagga.onDetected((result) => {

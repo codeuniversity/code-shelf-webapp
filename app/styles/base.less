@@ -23,20 +23,23 @@
 	src: url("/assets/fonts/Lato-Italic.ttf") format("truetype");
 }
 
-body {
-	outline: none;
-	font-family: 'Lato-Regular';
-	background-color: #f7f7f7;
-}
-
-* {
-	box-sizing: border-box;
-}
+@background-color: #f7f7f7;
 
 .npbm {
 	padding: 0;
 	margin: 0;
 	border: 0;
+}
+
+body {
+	outline: none;
+	font-family: 'Lato-Regular';
+	background-color: @background-color;
+	.npbm
+}
+
+* {
+	box-sizing: border-box;
 }
 
 img:active {

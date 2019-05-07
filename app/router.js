@@ -13,15 +13,4 @@ Router.map(function() {
   this.route('history');
 });
 
-Router.reopen({
-    didTransition() {
-        /*eslint-disable */
-        return ga('send', 'pageview', {
-            'page': this.get('url'),
-            'title': this.get('url')
-        });
-        /*eslint-enable */
-    }
-});
-
 export default Router;

@@ -49,7 +49,7 @@ export default Component.extend({
 					} else {
 						window.location.href = '/preview/' + result.codeResult.code;
 					}
-	      });
+				});
 			}
 			else {
 				Quagga.stop();
